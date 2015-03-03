@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Media Palette</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="search-area" class="stack">	
+			<h3>What media should you consume next?</h3>
+			<p>Enter books, bands, movies, authors and more separated by commas, and we'll suggest some more media for you!</p>
+			<form class="search" onsubmit="return false;">
+				<input id="entry" type="text" placeholder='e.g., "Haruki Murakami, One more thing"' name="tags" autofocus required>
+				<input id="submit" type="submit" value="Submit">
+			</form>
+		</div>
+		<div class="results-container">
+			<div class="search-results"></div>
+			<div class="results"></div>
+		</div>
+	</div>
+	<div class="templates hidden">
+		<dl class="result question">
+			<dt id="title">Recommendation</dt>
+				<dd class="question-text"><a href="" target="_blank"></a></dd>
+			<dt>Media Type</dt>
+				<dd class="media-type"></dd>
+			<dt>Details</dt>
+				<dd class="details"></dd>
+			<dt></dt>
+				<dd class="youtube-url"><a href="" target="_blank"></a></dd>
+		</dl>
+		<div class="error">
+			<p>Uh-oh! Something went wrong with your request. Here's what we know:</p>
+		</div>
+	</div>
+</body>
+</html>
