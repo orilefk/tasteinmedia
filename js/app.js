@@ -28,8 +28,12 @@ var showRecommendation = function(recommendation) {
 	detailsElem.text(recommendation.wTeaser);
 
 	var urlElem = result.find('.youtube-url a');
-	urlElem.attr('href', recommendation.yUrl);
-	urlElem.text('Play on YouTube');
+	if(recommendation.Type == 'music') {
+		urlElem.attr('href', recommendation.yUrl);
+		urlElem.text('Play on YouTube');
+	} else {
+		$('.youtube-url').hide();
+	}
 
 	return result;
 };
