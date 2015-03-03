@@ -86,10 +86,10 @@ var getRecommendation = function(tags) {
 };
 
 var moveUp = function(){
-	$('body').fadeOut(500,function(){
+	$('body').fadeOut(250,function(){
 		$('#search-area').removeClass('stack');
 		$('#search-area').addClass('stack-after-search');
-		$(this).fadeIn(500);
+		$(this).fadeIn(250);
 	});
 }
 

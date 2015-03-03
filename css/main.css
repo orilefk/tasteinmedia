@@ -68,3 +68,19 @@ dd > a {
 .question-text {
 	font-size: 2rem;
 }
+.stack h3, .stack-after-search h3 {
+	font-size: 2.5rem;
+	font-weight: normal;
+	color: #546E5B;
+}
+.stack p, .stack-after-search p {
+	color: #857C6F;
+}
+.copy {
+	font-size: 0.9rem;
+	font-weight: 300;
+	color: #838994;
+	bottom: 0;
+	margin-bottom: 2rem;
+	text-align: center;
+}
