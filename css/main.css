@@ -1,7 +1,7 @@
 
 .container {
 	margin: 0 auto;
-	width: 800px;
+	width: 40rem;
 	font-family: helvetica, sans-serif;
 }
 
@@ -44,6 +44,7 @@
 	width: 600px;
 }
 #submit {
+	margin-top: 4%;
 	display: none;
 }
 #title {
@@ -83,4 +84,15 @@ dd > a {
 	bottom: 0;
 	margin-bottom: 2rem;
 	text-align: center;
+}
+@media screen and (max-width: 600px) {
+	#submit {
+		display: inline;
+		height: 2rem;
+		width: 7rem;
+		background-color: #FF3D2E;
+		color: #ffffff;
+		border-radius: 7px;
+
+	}
 }
