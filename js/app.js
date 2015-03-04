@@ -1,7 +1,7 @@
 $(document).ready( function() {
 	$('.search').submit( function(event){
 		// zero out results if previous search has run
-		$('.results').html('');
+		$('.results').html('').delay(250);
 		// get the value of the tags the user submitted
 		var tags = $(this).find("input[name='tags']").val();
 		getRecommendation(tags);
@@ -9,11 +9,11 @@ $(document).ready( function() {
 	});
 });
 
-// this function takes the question object returned by StackOverflow 
-// and creates new result to be appended to DOM
+// this function takes the recommendation object returned by tastekid 
+// and creates new results to be appended to DOM
 var showRecommendation = function(recommendation) {
 	
-	// clone our result template code
+	// clone the result template code
 	var result = $('.templates .question').clone();
 	
 	// Set the title properties in result
@@ -39,7 +39,7 @@ var showRecommendation = function(recommendation) {
 };
 
 
-// this function takes the results object from StackOverflow
+// this function takes the results object from tastekid
 // and creates info about search results to be appended to DOM
 var showRecommendationResults = function(query, resultNum) {
 	var results = resultNum + ' results for <strong>' + query;
