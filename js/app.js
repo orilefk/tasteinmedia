@@ -1,9 +1,10 @@
 $(document).ready( function() {
 	$('.search').submit( function(event){
 		// zero out results if previous search has run
-		$('.results').html('').delay(250);
+		$('.results').html('');
 		// get the value of the tags the user submitted
 		var tags = $(this).find("input[name='tags']").val();
+
 		getRecommendation(tags);
 		moveUp();
 	});
@@ -56,8 +57,9 @@ var showError = function(error){
 // takes a string of semi-colon separated tags to be searched
 // for on TasteKid
 var getRecommendation = function(tags) {
-	
-	// the parameters we need to pass in our request to StackOverflow's API
+
+	$('.results-container').hide();
+	// the parameters we need to pass in our request to Tasetkid's API
 	var request = {q: tags,
 				   info: '1',
 				   k: '125776-TasteinM-EHMYH8Z0'};
@@ -70,12 +72,11 @@ var getRecommendation = function(tags) {
 		})
 	.done(function(result){
 		var recommendationResults = showRecommendationResults(request.q, result.Similar.Results.length);
-
-		$('.search-results').html(recommendationResults).delay(1000);
+		$('.search-results').html(recommendationResults);
 
 		$.each(result.Similar.Results, function(i, item) {
 			var recommendation = showRecommendation(item);
-			$('.results').append(recommendation).delay(1000);
+			$('.results').append(recommendation);
 		});
 	})
 	.fail(function(jqXHR, error, errorThrown){
@@ -86,11 +87,19 @@ var getRecommendation = function(tags) {
 };
 
 var moveUp = function(){
-	$('body').fadeOut(250,function(){
-		$('#search-area').removeClass('stack');
-		$('#search-area').addClass('stack-after-search');
-		$(this).fadeIn(250);
-	});
+	if ($('#search-area').hasClass('stack')) {
+		$('#search-area').fadeOut(500,function(){
+			$(this).removeClass('stack').addClass('stack-after-search')
+			.fadeIn(500, showResults);
+		});
+	} else {
+		showResults();
+	}
+
+}
+
+var showResults = function(){
+	$('.results-container').fadeIn(250);
 }
 
 
