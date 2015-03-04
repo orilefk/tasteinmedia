@@ -85,7 +85,7 @@ dd > a {
 	margin-bottom: 2rem;
 	text-align: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 	#submit {
 		display: inline;
 		height: 2rem;
@@ -93,6 +93,6 @@ dd > a {
 		background-color: #FF3D2E;
 		color: #ffffff;
 		border-radius: 7px;
-
 	}
+
 }
