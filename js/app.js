@@ -16,7 +16,7 @@ var showRecommendation = function(recommendation) {
 	
 	// clone the result template code
 	var result = $('.templates .question').clone();
-	
+
 	// Set the title properties in result
 	var titleElem = result.find('.question-text a');
 	titleElem.attr('href', recommendation.wUrl);
@@ -78,6 +78,10 @@ var getRecommendation = function(tags) {
 			var recommendation = showRecommendation(item);
 			$('.results').append(recommendation);
 		});
+
+		if (tags === "Kanye West") {
+			$('.results').prepend('<iframe src="http://www.kanyezone.com" class="easter-egg"></iframe>');
+		}
 	})
 	.fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
